@@ -5,6 +5,8 @@ withEnv(["AWS_ACCESS_KEY_ID=AKIAXEQG34BCPTUWSG66", "AWS_SECRET_ACCESS_KEY=DFfc8e
     AWS("ec2 describe-instances")
 }
 
+AWS("s3 ls")
+
 pipeline {
     agent { 
       docker {
