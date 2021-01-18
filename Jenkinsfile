@@ -1,7 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 @Library('github.com/releaseworks/jenkinslib') _
 
-withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AKIAXEQG34BCPTUWSG66', passwordVariable: 'DFfc8eP02LZN0pSmPj83a8DoXyqzSh5rX3Gumvz0']]) {
+withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ynov_22', usernameVariable: 'AKIAXEQG34BCPTUWSG66', passwordVariable: 'DFfc8eP02LZN0pSmPj83a8DoXyqzSh5rX3Gumvz0']]) {
         AWS("--region=eu-west-1 s3 ls")
 }
 
