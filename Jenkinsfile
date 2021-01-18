@@ -7,14 +7,15 @@ pipeline {
         args  '--entrypoint='
       }
     }
-    
+	
     options {
-	withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-key', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
+	    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-key', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
     }
-	environment {
-		AWS_REGION : 'eu-west-3'
-	}
+    environment {
+      AWS_REGION = 'eu-west-2'
+    }
     stages {
+	
 	stage('init') {
 		steps {
 			sh 'terraform init'
