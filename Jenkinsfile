@@ -9,23 +9,18 @@ pipeline {
     }
     
     stages {
-	stage('aws-configure') {
-		step {
-			sh 'aws configure'
-		}
-	}
 	stage('init') {
-		step {
+		steps {
 			sh 'terraform init'
 		}
 	}
 	stage('plan') {
-		step {
+		steps {
 			sh 'terraform plan'
 		}
 	}
 	stage('apply') {
-		step {
+		steps {
 			sh 'terraform apply -auto-approve'
 		}
 	}
